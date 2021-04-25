@@ -1,0 +1,10 @@
+<div class="rmlist">
+<p class="is-size-3">Roommates</p>
+
+ <div class="list-table" *ngFor="let task of tasks">
+   <p class="is-size-5">Task: {{task.description}}</p>
+   <p class="is-size-6 rmname"><span >Roommate Responsible:</span> {{task._roommateId[0].name}}<span class="is-size-9"> known as </span>{{task._roommateId[0].nickname}}</p>
+   <p class="is-size-6">Date: {{task.date | date}}</p>
+   <button class="button is-dark" (click)="deleteTask(task._id)">Delete Task</button>
+ </div>
+</div>

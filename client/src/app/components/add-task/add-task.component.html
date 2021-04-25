@@ -1,0 +1,24 @@
+<form class="form" class="form" [formGroup]="myForm" (ngSubmit)="addTask()">
+  <h1 class="is-size-3">Add a new task</h1>
+
+
+  <div class="field">
+    <label class="label">Task Description</label>
+  <input class="input" type="text" placeholder="Wash the dishes" formControlName="description">
+  </div>
+
+
+  <div class="field">
+    <label class="label">Roommate</label>
+    <div class="select" >
+      <select formControlName="_roommateId">
+        <option>Select dropdown</option>
+        <option *ngFor="let roommate of RoommateList" [value]="roommate._id" >{{roommate.name}}</option>
+      </select>
+    </div>
+  </div>
+
+  <p *ngIf="error === true">error has occured. please refresh the page and try again.</p>
+
+  <button class="button is-dark" [disabled]="myForm.invalid">Add Task</button>
+</form>

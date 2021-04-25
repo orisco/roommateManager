@@ -1,0 +1,21 @@
+<form class="form" class="form" [formGroup]="myForm" (ngSubmit)="addRoommate()">
+  <h1 class="is-size-3">Add a new roommate</h1>
+
+
+  <div class="field">
+    <label class="label">Name</label>
+  <input class="input" type="text" placeholder="Roommates Name" formControlName="name">
+  </div>
+
+  <div class="field">
+    <label class="label">Nickname</label>
+  <input class="input" type="text" placeholder="Roommates Nickname" formControlName="nickname">
+  </div>
+
+  <div class="field">
+    <label class="label">Title</label>
+  <input class="input" type="text" placeholder="Occupation or title in the home" formControlName="title">
+  </div>
+
+  <button class="button is-dark" [disabled]="myForm.invalid">Add Roommate</button>
+</form>
